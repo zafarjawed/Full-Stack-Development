@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Alliance Login Page</title>
+        <style>
+            body{
+                background: url(./1715752844phpBg0L8j.jpeg);
+                background-size: cover;
+            }
+            #logo {
+                display: block;
+                margin: auto;
+                width: 250px;
+                height: 50px;
+                margin-top: 50px;
+            }
+            #captch {
+                display: block;
+                margin: auto;
+                width: 150px;
+                height: 35px;
+                margin-right: 200px;
+            }
+            form {
+                padding: 10px;
+                padding-bottom: 20px;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.8);
+                width: 400px;
+                margin: auto;
+                margin-top: 100px;
+            }
+            button {
+                text-align: center;
+                margin-left: 230px;
+                background-color: #4a90e2;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+            }
+            #forgot-password {
+                text-align: left;
+                color: blue;
+                cursor: pointer;
+                margin-top: 10px;
+                margin-left: 50px;;
+            }
+            input[type="text"], input[type="password"] {
+                width: 300px;
+                height: 30px;
+            }
+            #refresh {
+                margin: -33px;
+                margin-right: -250px;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="logo" src="./Student-Logo.png" alt="Student Logo">
+        <form>
+            <p>Welcome to AUERP</p>
+            <h3>Faculty | Staff Login</h3>
+            <input type="text" placeholder="User Name" id="username">
+            <br><br>
+            <input type="password" placeholder="Password" id="password">
+            <br><br>
+            <img id="captch" src="./Captcha.png" alt="CAPTCHA"><img id="Refresh" src="istockphoto-1146728310-170667a.jpg" alt="Refresh CAPTCHA" style="width:30px; height:30px; cursor: pointer;"><br>
+            <br>
+            <input type="text" placeholder="Enter CAPTCHA" id="captcha">
+            <br><br>
+            <button> Login </button>
+            <p id="forgot-password">Forgot Password?</p>
+        </form>
+    </body>
+</html>
