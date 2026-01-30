@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+
+        /* App Header */
+        .app-header {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        label {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        input {
+            flex: 2;
+            padding: 5px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        #result {
+            max-width: 400px;
+            margin: 20px auto 40px auto;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- App Header -->
+    <div class="app-header">Simple Interest App</div>
+
+    <!-- Form -->
+    <form id="interestForm">
+        <div class="form-group">
+            <label for="p_amt">Principal Amount:</label>
+            <input type="number" id="p_amt" required>
+        </div>
+
+        <div class="form-group">
+            <label for="time">Time (in Months):</label>
+            <input type="number" id="time" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rate">Rate of Interest (%):</label>
+            <input type="number" id="rate" required>
+        </div>
+
+        <button type="button" onclick="calculateInterest()">Calculate</button>
+    </form>
+
+    <!-- Result -->
+    <h2>Result:</h2>
+    <div id="result"></div>
+
+    <script>
+        function calculateInterest() {
+            let p_amt = Number(document.getElementById("p_amt").value);
+            let time = Number(document.getElementById("time").value);
+            let rate = Number(document.getElementById("rate").value);
+
+            let timeInYears = time / 12;
+            let S_interest = (p_amt * timeInYears * rate) / 100;
+            let totalAmount = p_amt + S_interest;
+
+            document.getElementById("result").innerHTML =
+                "Principal Amount: " + p_amt + "<br>" +
+                "Time: " + time + " months (" + timeInYears.toFixed(2) + " years)<br>" +
+                "Rate: " + rate + "%<br>" +
+                "Simple Interest: " + S_interest.toFixed(2) + "<br>" +
+                "<b>Total Amount: " + totalAmount.toFixed(2) + "</b>";
+        }
+    </script>
+</body>
+</html>

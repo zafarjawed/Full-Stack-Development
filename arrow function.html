@@ -1,0 +1,124 @@
+<html>
+<head>
+  <title>Arrow Function Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f); 
+      padding: 20px;
+    }
+    .box {
+      background: #ffffff;
+      padding: 15px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #e85d04; 
+    }
+    input, select, button {
+      width: 95%;
+      padding: 8px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #ff6f61; 
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #d94f3d;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      background: #ffe5d9; 
+      padding: 8px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Calculator -->
+  <div class="box">
+    <h2>Calculator</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <select id="operation">
+      <option value="add">Add</option>
+      <option value="subtract">Subtract</option>
+      <option value="multiply">Multiply</option>
+      <option value="divide">Divide</option>
+    </select>
+    <button onclick="calculate()">Calculate</button>
+    <div class="result" id="calcResult"></div>
+  </div>
+
+  <!-- Marriage Eligibility -->
+  <div class="box">
+    <h2>Marriage Eligibility</h2>
+    <input type="number" id="age" placeholder="Enter your age">
+    <select id="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <button onclick="checkEligibility()">Check</button>
+    <div class="result" id="eligibilityResult"></div>
+  </div>
+
+  <script>
+    // Arrow functions for calculator
+    const add = (a, b) => a + b;
+    const subtract = (a, b) => a - b;
+    const multiply = (a, b) => a * b;
+    const divide = (a, b) => b !== 0 ? a / b : "Cannot divide by zero";
+
+    const calculate = () => {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let op = document.getElementById("operation").value;
+      let result;
+
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "Enter valid numbers!";
+      } else {
+        if (op === "add") result = add(num1, num2);
+        if (op === "subtract") result = subtract(num1, num2);
+        if (op === "multiply") result = multiply(num1, num2);
+        if (op === "divide") result = divide(num1, num2);
+      }
+      document.getElementById("calcResult").textContent = "Result: " + result;
+    };
+
+    // Arrow function for marriage eligibility
+    const isEligible = (age, gender) => {
+      if (gender === "male") return age >= 21 ? "Eligible" : "Not Eligible (min age 21)";
+      if (gender === "female") return age >= 18 ? "Eligible" : "Not Eligible (min age 18)";
+    };
+
+    const checkEligibility = () => {
+      let age = parseInt(document.getElementById("age").value);
+      let gender = document.getElementById("gender").value;
+      let result;
+
+      if (isNaN(age)) {
+        result = "Enter a valid age!";
+      } else {
+        result = isEligible(age, gender);
+      }
+      document.getElementById("eligibilityResult").textContent = "Marriage Eligibility: " + result;
+    };
+  </script>
+
+</body>
+</html>
