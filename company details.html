@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Updated Details</title>
+    </head>
+    <body>
+        <h1 style="text-align: center; font-family: sans-serif; color: #2c3e50;">
+            Global Tech & Superfoods Overview
+        </h1>
+
+        <script>
+           
+            let fruits = ["Dragon Fruit", "Lychee", "Durian", "Mangosteen", "Passion Fruit", "Star Fruit", "Goji Berry", "Persimmon", "Guava"];
+            document.write("<strong>New Superfoods List:<strong>" + fruits.join(", ") + "<br><br><hr>");
+
+           
+            let tesla = {1: "Tesla", 2: "Elon Musk", 3: "140,000", 4: "35 LPA", 5: "Texas"}
+            let ferrari = {1: "Ferrari", 2: "Enzo Ferrari", 3: "5,000", 4: "45 LPA", 5: "Maranello"}
+            let spacex = {1: "SpaceX", 2: "Elon Musk", 3: "13,000", 4: "40 LPA", 5: "California"}
+            let nvidia = {1: "NVIDIA", 2: "Jensen Huang", 3: "27,000", 4: "38 LPA", 5: "Santa Clara"}
+            let toyota = {1: "Toyota", 2: "Kiichiro Toyoda", 3: "375,000", 4: "22 LPA", 5: "Toyota City"}
+
+            
+            let companies = [tesla, ferrari, spacex, nvidia, toyota];
+
+            for (let i = 0; i < companies.length; i++) {
+                document.write("<strong>COMPANY<strong> " + (i + 1) + ":");
+                document.write("<strong>Name:</strong> " + companies[i][1] + "<br>");
+                document.write("<strong>Founder:</strong> " + companies[i][2] + "<br>");
+                document.write("<strong>Employees:</strong> " + companies[i][3] + "<br>");
+                document.write("<strong>Average Salary Package:</strong> " + companies[i][4] + "<br>");
+                document.write("<strong>Headquarters:</strong> " + companies[i][5] + "<br>");
+                document.write("<br>");
+            }
+        </script>
+    </body>
+</html>

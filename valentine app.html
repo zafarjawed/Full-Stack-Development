@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>My Valentine App</title>
+    <style>
+        body {
+            background-image: url();
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            background-color:rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 320px;
+            text-align: center;
+            border: 3px solid #ff4d6d;
+            margin-right: 650px;
+            margin-top: 80px;
+        }
+
+        h1 {
+            color: #ff4d6d;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            border: 2px solid #ffb3c1;
+            border-radius: 10px;
+            width: 70px;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+           
+        }
+
+        button:hover {
+            background-color: #c9184a;
+            transform: scale(1.05);
+        }
+
+        #message {
+            margin-top: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff4d6d;
+            min-height: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>💖 Valentine Day </h1>
+        <p>Type a date in Feb (1-28):</p>
+        
+        <input type="number" id="myDay" placeholder="14" min="1" max="28">
+        
+        <button onclick="findDay()">Check Date</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function findDay() {
+            var date = document.getElementById("myDay").value;
+            var result = document.getElementById("message");
+            
+          
+            if (date == "") {
+                alert("Please type a number!");
+                return;
+            }
+
+           
+            if (date < 1 || date > 29) {
+                result.innerHTML = "That's not a valid date!";
+            } 
+            else if (date == 7) {
+                result.innerHTML = "Rose Day! 🌹";
+            } else if (date == 8) {
+                result.innerHTML = "Propose Day! 💍";
+            } else if (date == 9) {
+                result.innerHTML = "Chocolate Day! 🍫";
+            } else if (date == 10) {
+                result.innerHTML = "Teddy Day! 🧸";
+            } else if (date == 11) {
+                result.innerHTML = "Promise Day! 🤝";
+            } else if (date == 12) {
+                result.innerHTML = "Hug Day! 🤗";
+            } else if (date == 13) {
+                result.innerHTML = "Kiss Day! 💋";
+            } else if (date == 14) {
+                result.innerHTML = "VALENTINE'S DAY! ❤️";
+            } else {
+                result.innerHTML = "Just a normal day.";
+            }
+        }
+    </script>
+
+</body>
+</html>
